@@ -20,9 +20,9 @@ import (
 
 var (
 	conv   = md.NewConverter("", true, nil)
-	input  = flag.String("input", "", "要转换的html根目录\n    Default: --input=当前目录")
-	output = flag.String("output", "", "保存Markdown的目标目录\n    Default: --output=当前目录")
-	nameby = flag.String("nameby", "", "Markdown文件命名方式:\n    html = 使用html本身文件名，适用于一个目录内多个html的情况\n    dir  = 使用html父目录作为文件名，适用于一个目录只有一个html文件，且文件名为index.html的情况\n    default: --nameby=html ")
+	input  = flag.String("input", "", "要转换的html根目录\nHtml root dir to convert\n    Default: --input = Current dir")
+	output = flag.String("output", "", "保存Markdown的目标目录\nWhere to save the MD files\n    Default: --output = Current dir")
+	nameby = flag.String("nameby", "", "Markdown文件命名方式:\nHow to name MD file:\n    html = 使用html本身文件名，适用于一个目录内多个html的情况\n           Name MD by html file-name\n    dir  = 使用html父目录作为文件名，适用于一个目录只有一个html文件，且文件名为index.html的情况\n           Name MD by dir-name which html file belong to\n    Default: --nameby=html ")
 )
 
 // usage
@@ -41,7 +41,7 @@ func main() {
 
 		fmt.Println("usage:\n  html2md --input '~/user/xx/' --output '~/user/yy' --nameby='dir'")
 		flag.PrintDefaults()
-		fmt.Println("--nameby 参数不正确。")
+		fmt.Println("\n--nameby 参数不正确。")
 		return
 	}
 	fmt.Println("usage:\n  html2md --input '~/user/xx/' --output '~/user/yy' --nameby='dir'")

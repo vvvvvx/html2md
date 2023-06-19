@@ -14,18 +14,21 @@ html2md --input '~/user/xx/' --output '~/user/yy' --nameby='dir'
 html2md -h
 
 --input string
-    	要转换的html根目录 / Html root dir to convert
+    	要转换的html根目录  
+        Html root dir to convert
     	    Default: --input = Current dir
---nameby string
-    	Markdown文件命名方式 / How to name MD file:
-    	    html = 使用html本身文件名，适用于一个目录内多个html的情况 / 
-                   By html name
-    	    dir  = 使用html父目录作为文件名，适用于一个目录只有一个html文件，且文件名为index.html的情况 / 
-                   By dir name
-    	    default: --nameby = html 
 --output string
-    	保存Markdown的目标目录 / Where to save the MD files
+    	保存Markdown的目标目录  
+        Where to save the MD files
     	    Default: --output = Current dir
+--nameby string
+    	Markdown文件命名方式  
+        How to name MD file:
+    	    html = 使用html本身文件名，适用于一个目录内多个html的情况  
+                   Name MD by html file-name
+    	    dir  = 使用html父目录作为文件名，适用于一个目录只有一个html文件，且文件名为index.html的情况  
+                   Name MD by dir-name which html file belong to
+    	    default: --nameby = html 
 
 ```
 
