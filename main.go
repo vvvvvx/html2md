@@ -272,7 +272,7 @@ func copyFile(src, dest string) (w int64, err error) {
 func modifyPicRefPath(str string) (string, error) {
 	//reg := regexp2.MustCompile(`(\!\[[-_\w一-龥]*\]\()(?!data:)`, 1)
 	//reg := regexp2.MustCompile(`(\!\[[-_\w{han}！“”。，：；]*\]\()(?!data:)`, 1)
-	reg := regexp2.MustCompile(`(\!\[{1,2}[-_.\w{han}！“”。，：；]*\]{1,2}\()(?!data:)`, 1) // ![[文字]]() 或 ![文字]()，所以'['和']'可以出现1到两次
+	reg := regexp2.MustCompile(`(\!\[{1,2}[-_.\w{han}！\”。，：；]*\]{1, }\()(?!data:)`, 1) // ![[文字]]() 或 ![文字]()，所以'['和']'可以出现1到两次
 	return reg.Replace(str, `${1}src_files/`, 0, -1)
 }
 
